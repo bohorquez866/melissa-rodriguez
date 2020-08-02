@@ -27,6 +27,11 @@
     }
 }
 
+.center-picture {
+    display: block;
+    margin: 0 auto;
+}
+
 .grid-long {
     grid-column: 1/-1;
 }
@@ -65,9 +70,6 @@
         transform: translateY(.1rem);
         box-shadow: 0px 0px 6px 0px rgba(15, 15, 15, 0.302);
     }
-    @include mq($bpMedium) {
-        margin-bottom: 1rem;
-    }
     &__container {
         justify-content: center;
         margin-top: 3rem;
@@ -91,6 +93,14 @@
         &:hover {
             background-color: darken(#1a6db1, 15%);
         }
+    }
+    @include mq($bpMedium) {
+        margin: 0 auto;
+        margin-bottom: 2rem;
+        display: block;
+        width: 80%;
+        max-width: 80%;
+        padding: 2rem;
     }
 }
 
@@ -125,6 +135,16 @@
         }
         &.active::after {
             content: '\2212';
+        }
+        @include mq($bpSmall) {
+            display: grid;
+            &::after {
+                content: '\002B';
+                font-size: 4rem;
+                right: 0;
+                top: -1rem;
+                //active status on clik
+            }
         }
     }
     &-body {

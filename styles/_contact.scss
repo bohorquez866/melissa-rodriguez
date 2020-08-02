@@ -1,0 +1,78 @@
+.contact {
+    @extend .grid-center;
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+    margin-top: 2rem;
+    padding: 2rem;
+    @include mq($bpMedium) {
+        width: auto;
+        grid-template-columns: 1fr;
+    }
+    background-color: rgba(255, 255, 255, 0.281);
+    &__form {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        width: 80%;
+        @include mq($bpMedium) {
+            margin-bottom: 3rem;
+        }
+        & * {
+            font-family: $primary-font;
+        }
+        @include mq($bpMedium) {
+            width: 100%;
+        }
+    }
+    &__input {
+        box-shadow: 0 1rem 3rem rgba(179, 97, 185, 0.125);
+        border-radius: 1rem 0 1rem 0;
+        appearance: none;
+        border: none;
+        outline: none;
+        font-size: 2rem;
+        padding: 1rem;
+        color: darksalmon;
+        transition: all 1s ease-out;
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+        &::placeholder {
+            color: rgb(95, 89, 81);
+        }
+        &:placeholder-shown {
+            border-bottom: 2px solid rgba(255, 0, 0, 0.329);
+        }
+        &:focus {
+            border-bottom: 2px solid rgb(7, 246, 7);
+            border-radius: 0 1rem 0 1rem;
+        }
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        &-title {
+            font-size: 2.4rem;
+            margin-bottom: 3rem;
+            color: #3E3E40;
+            text-transform: uppercase;
+        }
+        strong {
+            font-size: 2.5rem;
+            color: $grey;
+        }
+    }
+    &__link {
+        font-style: italic;
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        color: #657062;
+        font-weight: 700;
+        &:hover {
+            color: rgb(35, 55, 112);
+        }
+    }
+    .message {
+        height: 20rem;
+    }
+}

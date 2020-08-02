@@ -1,0 +1,29 @@
+.services {
+    @extend .grid-center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    @include mq($bpMedium) {
+        width: auto;
+        grid-template-columns: 1fr;
+    }
+    &__item {
+        background-color: $white;
+        padding: 1.5rem;
+        @extend .b-radius-1;
+        box-shadow: 0 1rem 3rem rgba(31, 45, 61, .25);
+    }
+    &__title {
+        font-size: 2rem;
+        color: #3c3341;
+        font-weight: 700;
+        margin-bottom: 2rem;
+    }
+    &__body-text {
+        font-size: 1.6rem;
+        line-height: 2;
+    }
+    &__icon {
+        width: 6rem;
+    }
+}

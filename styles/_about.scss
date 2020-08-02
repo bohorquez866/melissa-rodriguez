@@ -1,0 +1,25 @@
+.about {
+    margin: 3rem 0;
+    @extend .grid-center;
+    grid-template-columns: 1fr 2fr;
+    @include mq($bpMedium) {
+        grid-template-columns: 1fr;
+    }
+    &__content {
+        padding: 0 2rem;
+        align-self: center;
+    }
+    &__text {
+        font-size: 1.8rem;
+        line-height: 1.5;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 3rem;
+    }
+    &__photo {
+        overflow: hidden;
+        border-radius: 10rem;
+        max-width: 30rem;
+        max-height: 20rem;
+    }
+}

@@ -1,0 +1,46 @@
+.education {
+    padding: 2rem;
+    margin: 3rem 0;
+    @extend .grid-center;
+    grid-gap: 1rem 2rem;
+    background-color: #fefeff;
+    &__item {
+        @extend .d-grid;
+        grid-template-columns: max-content 1fr;
+        grid-template-rows: repeat(3, max-content);
+        align-items: center;
+        background-color: $white;
+        padding: 1.5rem;
+        @extend .b-radius-1;
+        box-shadow: 0 1rem 3rem rgba(31, 45, 61, .125);
+        margin: 0;
+        grid-gap: 1rem;
+        width: 80%;
+        @include mq($bpMedium) {
+            width: auto;
+            grid-template-columns: 1fr;
+        }
+    }
+    &__item-title {
+        font-size: 2rem;
+        color: rgb(55, 66, 66);
+        display: inline-block;
+        position: relative;
+    }
+    &__date {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: $blue;
+    }
+    &__info {
+        font-size: 1.6rem;
+    }
+    &__icon {
+        display: inline-block;
+        width: 6rem;
+        grid-column: 1/2;
+        grid-row: 1/-1;
+        margin-right: 1.5rem;
+        align-self: center;
+    }
+}

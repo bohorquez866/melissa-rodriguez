@@ -1,0 +1,135 @@
+.d-flex {
+    display: flex;
+}
+
+.transition-3 {
+    transition: all .3s ease-in;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.d-grid {
+    display: grid;
+}
+
+.grid-center {
+    @extend .d-grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    padding: 0 2rem;
+    @include mq($bpMedium) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.grid-long {
+    grid-column: 1/-1;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.center-margin {
+    margin: auto;
+}
+
+.grid-w-100 {
+    grid-column: 1/-1;
+}
+
+.b-radius-1 {
+    border-radius: 1rem;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    appearance: none;
+    border-radius: 5rem;
+    width: 20rem;
+    max-width: 20rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $white;
+    @extend.center-text;
+    @extend .transition-3;
+    &:active {
+        transform: translateY(.1rem);
+        box-shadow: 0px 0px 6px 0px rgba(15, 15, 15, 0.302);
+    }
+    @include mq($bpMedium) {
+        margin-bottom: 1rem;
+    }
+    &__container {
+        justify-content: center;
+        margin-top: 3rem;
+        @include mq($bpMedium) {
+            flex-direction: column;
+        }
+    }
+    &__primary {
+        background-color: $white;
+        color: $grey;
+        box-shadow: 0px 0px 6px 2px rgba(13, 13, 14, .1);
+        margin: 0 2.5rem;
+        &:hover {
+            background-color: darken($white, 15%);
+        }
+    }
+    &__secondary {
+        background-color: #1a6db1;
+        box-shadow: 0px 0px 6px 2px rgba(118, 118, 175, .3);
+        margin: 0 2.5rem;
+        &:hover {
+            background-color: darken(#1a6db1, 15%);
+        }
+    }
+}
+
+.tag {
+    display: block;
+    padding: .6rem;
+    background-color: #7883e7;
+    color: $white;
+    @extend .b-radius-1;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    width: 15rem;
+    @extend .center-text;
+    @include mq($bpMedium) {
+        margin: 1rem auto;
+    }
+}
+
+.accordion {
+    &-header {
+        width: 100%;
+        position: relative;
+        align-items: center;
+        // plus symbol
+        &::after {
+            content: '\002B';
+            font-size: 3rem;
+            position: absolute;
+            right: 0;
+            //active status on clik
+        }
+        &.active::after {
+            content: '\2212';
+        }
+    }
+    &-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .3s ease-in;
+    }
+}

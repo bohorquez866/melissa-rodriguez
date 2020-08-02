@@ -9,6 +9,10 @@ h4 {
     color: $grey-purple;
     font-size: 3.5rem;
     font-weight: 900;
+    @include mq($bpBig) {
+        font-size: 3rem;
+        text-align: left;
+    }
     @include mq($bpMedium) {
         font-size: 3rem;
     }
@@ -26,6 +30,9 @@ h4 {
     font-weight: 700;
     color: $grey;
     margin-bottom: 2rem;
+    @include mq($bpMedium) {
+        margin: 2rem 0;
+    }
 }
 
 .body-text-1 {
@@ -33,4 +40,7 @@ h4 {
     font-size: 1.8rem;
     color: $grey-2;
     line-height: 1.5;
+    @include mq($bpBig) {
+        text-align: left;
+    }
 }

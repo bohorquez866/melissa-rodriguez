@@ -4,11 +4,16 @@
     padding: 2rem 0;
     width: 100%;
     position: fixed;
-    z-index: 100;
+    z-index: 100000;
     color: $grey;
     background-color: $white;
     //shadow
     box-shadow: 0px 0px 6px 2px rgba(204, 186, 204, 1);
+    @include mq($bpMedium) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
     &__logo {
         font-size: 2.5rem;
         grid-column: 1/3;
@@ -23,14 +28,33 @@
         grid-column: 7/-1;
         font-size: 2.2rem;
         justify-content: space-around;
+        align-items: center;
         @extend .flex-wrap;
+        transition: all .2s ease;
+        align-self: stretch;
         @include mq($bpMedium) {
-            display: none;
+            transform: translateY(-120%);
+            position: absolute;
+            width: 100%;
+            z-index: 100;
+            display: block;
+            background-color: rgba(0, 0, 0, 0.692);
+            color: $white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 3rem;
         }
     }
     &__link {
-        &:hover {
-            color: #409bcf;
+        @include mq-min($bpMedium) {
+            &:hover {
+                color: #409bcf;
+            }
+        }
+        @include mq($bpMedium) {
+            &:active {
+                color: #409bcf;
+            }
         }
     }
 }
@@ -38,10 +62,15 @@
 .header {
     min-height: 100vh;
     @extend .grid-center;
-    padding-top: 15vh;
-    @include mq($bpMedium) {
+    padding-top: 10vh;
+    @include mq($bpBig) {
+        padding-top: 10vh;
+        min-height: auto;
         height: auto;
         text-align: center;
+    }
+    @include mq($bpSmall) {
+        padding-top: 13rem;
     }
     &__content {
         padding: 2rem;
@@ -59,4 +88,48 @@
             grid-column: auto;
         }
     }
+}
+
+.burger-menu {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    right: 1rem;
+    top: 3rem;
+    height: 2.1rem;
+    width: 2.8rem;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    &__btn,
+    &__btn::before,
+    &__btn::after {
+        position: absolute;
+        width: 2.8rem;
+        transition: all 0.5s ease-in-out;
+        height: 3px;
+        background: $grey;
+    }
+    &__btn::before,
+    &__btn::after {
+        content: '';
+    }
+    &__btn {
+        right: 0;
+        top: 0.5rem;
+        &::before {
+            top: -8px;
+            height: 3px;
+        }
+        &::after {
+            top: 8px;
+            width: 2rem;
+        }
+    }
+    @include mq($bpMedium) {
+        display: block;
+    }
+}
+
+.show-sidebar {
+    transform: translateY(calc(50% - 3rem));
 }

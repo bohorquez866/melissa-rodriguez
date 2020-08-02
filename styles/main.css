@@ -67,6 +67,13 @@ h4 {
   font-weight: 900;
 }
 
+@media only screen and (max-width: 81.25em) {
+  .main-title {
+    font-size: 3rem;
+    text-align: left;
+  }
+}
+
 @media only screen and (max-width: 60em) {
   .main-title {
     font-size: 3rem;
@@ -87,11 +94,23 @@ h4 {
   margin-bottom: 2rem;
 }
 
+@media only screen and (max-width: 60em) {
+  .tertiary-title {
+    margin: 2rem 0;
+  }
+}
+
 .body-text-1 {
   margin-bottom: 2rem;
   font-size: 1.8rem;
   color: #333;
   line-height: 1.5;
+}
+
+@media only screen and (max-width: 81.25em) {
+  .body-text-1 {
+    text-align: left;
+  }
 }
 
 .d-flex {
@@ -300,11 +319,26 @@ h4 {
   padding: 2rem 0;
   width: 100%;
   position: fixed;
-  z-index: 100;
+  z-index: 100000;
   color: #555;
   background-color: #fff;
   -webkit-box-shadow: 0px 0px 6px 2px #ccbacc;
           box-shadow: 0px 0px 6px 2px #ccbacc;
+}
+
+@media only screen and (max-width: 60em) {
+  .navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
 }
 
 .navbar__logo {
@@ -330,27 +364,61 @@ h4 {
   font-size: 2.2rem;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
 }
 
 @media only screen and (max-width: 60em) {
   .navbar__list {
-    display: none;
+    -webkit-transform: translateY(-120%);
+            transform: translateY(-120%);
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.692);
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    font-size: 3rem;
   }
 }
 
-.navbar__link:hover {
-  color: #409bcf;
+@media only screen and (min-width: 60em) {
+  .navbar__link:hover {
+    color: #409bcf;
+  }
+}
+
+@media only screen and (max-width: 60em) {
+  .navbar__link:active {
+    color: #409bcf;
+  }
 }
 
 .header {
   min-height: 100vh;
-  padding-top: 15vh;
+  padding-top: 10vh;
 }
 
-@media only screen and (max-width: 60em) {
+@media only screen and (max-width: 81.25em) {
   .header {
+    padding-top: 10vh;
+    min-height: auto;
     height: auto;
     text-align: center;
+  }
+}
+
+@media only screen and (max-width: 30em) {
+  .header {
+    padding-top: 13rem;
   }
 }
 
@@ -381,6 +449,58 @@ h4 {
   .header__picture {
     grid-column: auto;
   }
+}
+
+.burger-menu {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  right: 1rem;
+  top: 3rem;
+  height: 2.1rem;
+  width: 2.8rem;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.burger-menu__btn, .burger-menu__btn::before, .burger-menu__btn::after {
+  position: absolute;
+  width: 2.8rem;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  height: 3px;
+  background: #555;
+}
+
+.burger-menu__btn::before, .burger-menu__btn::after {
+  content: '';
+}
+
+.burger-menu__btn {
+  right: 0;
+  top: 0.5rem;
+}
+
+.burger-menu__btn::before {
+  top: -8px;
+  height: 3px;
+}
+
+.burger-menu__btn::after {
+  top: 8px;
+  width: 2rem;
+}
+
+@media only screen and (max-width: 60em) {
+  .burger-menu {
+    display: block;
+  }
+}
+
+.show-sidebar {
+  -webkit-transform: translateY(calc(50% - 3rem));
+          transform: translateY(calc(50% - 3rem));
 }
 
 .about {

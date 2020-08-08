@@ -31,10 +31,6 @@ html {
   }
 }
 
-body {
-  background-color: #F7F7FF;
-}
-
 a {
   text-decoration: none;
   color: inherit;
@@ -83,7 +79,7 @@ h4 {
 .secondary-title {
   font-size: 3rem;
   font-weight: 700;
-  color: #7166ff;
+  color: #ABABFF;
   margin-bottom: 2rem;
 }
 
@@ -200,8 +196,6 @@ h4 {
 .btn:active {
   -webkit-transform: translateY(0.1rem);
           transform: translateY(0.1rem);
-  -webkit-box-shadow: 0px 0px 6px 0px rgba(15, 15, 15, 0.302);
-          box-shadow: 0px 0px 6px 0px rgba(15, 15, 15, 0.302);
 }
 
 .btn__container {
@@ -221,21 +215,18 @@ h4 {
 }
 
 .btn__primary {
-  background-color: #fff;
+  background-color: #e2dede;
   color: #555;
-  -webkit-box-shadow: 0px 0px 6px 2px rgba(13, 13, 14, 0.1);
-          box-shadow: 0px 0px 6px 2px rgba(13, 13, 14, 0.1);
   margin: 0 2.5rem;
 }
 
 .btn__primary:hover {
-  background-color: #d9d9d9;
+  background-color: #a6a6a6;
+  color: #fff;
 }
 
 .btn__secondary {
   background-color: #1a6db1;
-  -webkit-box-shadow: 0px 0px 6px 2px rgba(118, 118, 175, 0.3);
-          box-shadow: 0px 0px 6px 2px rgba(118, 118, 175, 0.3);
   margin: 0 2.5rem;
 }
 
@@ -257,7 +248,7 @@ h4 {
 .tag {
   display: block;
   padding: .6rem;
-  background-color: #7883e7;
+  background-color: #08828e;
   color: #fff;
   font-size: 1.4rem;
   font-weight: 700;
@@ -392,13 +383,13 @@ h4 {
 
 @media only screen and (min-width: 60em) {
   .navbar__link:hover {
-    color: #409bcf;
+    color: #19d1d1;
   }
 }
 
 @media only screen and (max-width: 60em) {
   .navbar__link:active {
-    color: #409bcf;
+    color: #19d1d1;
   }
 }
 
@@ -564,9 +555,10 @@ h4 {
       -ms-grid-row-align: start;
       align-self: start;
   background-color: #fff;
+  width: 85%;
   padding: 1.5rem;
-  -webkit-box-shadow: 0 1rem 3rem rgba(31, 45, 61, 0.125);
-          box-shadow: 0 1rem 3rem rgba(31, 45, 61, 0.125);
+  -webkit-box-shadow: 0 0 0.5rem rgba(31, 45, 61, 0.125);
+          box-shadow: 0 0 0.5rem rgba(31, 45, 61, 0.125);
   margin: 0;
   grid-gap: 1rem;
 }
@@ -574,6 +566,8 @@ h4 {
 @media only screen and (max-width: 60em) {
   .education__item {
     width: auto;
+    -ms-grid-column-align: stretch;
+        justify-self: stretch;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
@@ -588,15 +582,17 @@ h4 {
 .education__date {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #33a1cc;
+  color: #19d1d1;
 }
 
 .education__info {
   font-size: 1.6rem;
+  margin-top: 1rem;
 }
 
 .education__icon {
   width: 6rem;
+  height: 6rem;
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
@@ -631,8 +627,8 @@ h4 {
 .services__item {
   background-color: #fff;
   padding: 1.5rem;
-  -webkit-box-shadow: 0 1rem 3rem rgba(31, 45, 61, 0.25);
-          box-shadow: 0 1rem 3rem rgba(31, 45, 61, 0.25);
+  -webkit-box-shadow: 0 0.5rem 0.5rem rgba(31, 45, 61, 0.25);
+          box-shadow: 0 0.5rem 0.5rem rgba(31, 45, 61, 0.25);
 }
 
 .services__title {
@@ -671,9 +667,12 @@ h4 {
 }
 
 .contact__form {
+  background-color: #edf6f5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  border-radius: 1rem;
+  padding: 2rem;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -701,8 +700,6 @@ h4 {
 }
 
 .contact__input {
-  -webkit-box-shadow: 0 1rem 3rem rgba(179, 97, 185, 0.125);
-          box-shadow: 0 1rem 3rem rgba(179, 97, 185, 0.125);
   border-radius: 1rem 0 1rem 0;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -714,6 +711,7 @@ h4 {
   color: darksalmon;
   -webkit-transition: all 1s ease-out;
   transition: all 1s ease-out;
+  border-bottom: 2px solid transparent;
 }
 
 .contact__input:not(:last-child) {
@@ -737,7 +735,7 @@ h4 {
 }
 
 .contact__input:placeholder-shown {
-  border-bottom: 2px solid rgba(255, 0, 0, 0.329);
+  border-bottom: 2px solid rgba(120, 8, 248, 0.329);
 }
 
 .contact__input:focus {
@@ -779,7 +777,21 @@ h4 {
   color: #233770;
 }
 
-.contact .message {
+.message {
   height: 20rem;
+}
+
+.alert {
+  padding: 1rem;
+  background-color: #117711;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #fff;
+  display: none;
+}
+
+.alert i {
+  color: inherit;
+  margin-right: .5rem;
 }
 /*# sourceMappingURL=main.css.map */

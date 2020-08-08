@@ -4,11 +4,12 @@ $secondary-font: 'Barlow',
 sans-serif;
 $white: #fff;
 $black: #000;
-$purple: #7166ff;
-$blue: rgb(51, 161, 204);
+$purple: #ABABFF;
+$blue: #19d1d1;
+$blue-1: #409bcf;
 $grey: #555;
 $grey-2: #333;
-$body-bg: #F7F7FF;
+$body-bg: #4dc7ff2c;
 $grey-purple: #5d5c6d;
 //breakpoint
 $bpLarge: 106.25em;
@@ -49,10 +50,6 @@ html {
     @include mq-min($bpLarge) {
         font-size: 80%;
     }
-}
-
-body {
-    background-color: $body-bg;
 }
 
 a {

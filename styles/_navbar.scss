@@ -48,12 +48,12 @@
     &__link {
         @include mq-min($bpMedium) {
             &:hover {
-                color: #409bcf;
+                color: $blue;
             }
         }
         @include mq($bpMedium) {
             &:active {
-                color: #409bcf;
+                color: $blue;
             }
         }
     }

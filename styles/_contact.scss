@@ -10,7 +10,10 @@
     }
     background-color: rgba(255, 255, 255, 0.281);
     &__form {
+        background-color: rgb(237, 246, 245);
         display: flex;
+        border-radius: 1rem;
+        padding: 2rem;
         flex: 1;
         flex-direction: column;
         width: 80%;
@@ -25,7 +28,6 @@
         }
     }
     &__input {
-        box-shadow: 0 1rem 3rem rgba(179, 97, 185, 0.125);
         border-radius: 1rem 0 1rem 0;
         appearance: none;
         border: none;
@@ -34,6 +36,7 @@
         padding: 1rem;
         color: darksalmon;
         transition: all 1s ease-out;
+        border-bottom: 2px solid transparent;
         &:not(:last-child) {
             margin-bottom: 2rem;
         }
@@ -41,7 +44,7 @@
             color: rgb(95, 89, 81);
         }
         &:placeholder-shown {
-            border-bottom: 2px solid rgba(255, 0, 0, 0.329);
+            border-bottom: 2px solid rgba(120, 8, 248, 0.329);
         }
         &:focus {
             border-bottom: 2px solid rgb(7, 246, 7);
@@ -72,7 +75,21 @@
             color: rgb(35, 55, 112);
         }
     }
-    .message {
-        height: 20rem;
+}
+
+.message {
+    height: 20rem;
+}
+
+.alert {
+    padding: 1rem;
+    background-color: rgb(17, 119, 17);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: $white;
+    display: none;
+    i {
+        color: inherit;
+        margin-right: .5rem;
     }
 }

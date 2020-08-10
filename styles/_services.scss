@@ -11,13 +11,14 @@
         background-color: $white;
         padding: 1.5rem;
         @extend .b-radius-1;
-        box-shadow: 0 .5rem .5rem rgba(31, 45, 61, .25);
+        box-shadow: 0 -.1rem .5rem rgba(31, 45, 61, .25);
+        align-self: stretch;
     }
     &__title {
         font-size: 2rem;
         color: #3c3341;
         font-weight: 700;
-        margin-bottom: 2rem;
+        margin: 2rem 0;
     }
     &__body-text {
         font-size: 1.6rem;
